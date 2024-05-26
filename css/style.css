@@ -198,7 +198,35 @@ ul {
 }
 
 
+/* Icons */
 
+html {
+	scroll-behavior: smooth;
+  }
+.itr_filing_logo{
+	float: left;
+	width: 56px;
+	height: 56px;
+	/* margin-right: 1rem !important; */
+}
+
+.follow_us_btn_text{
+	font-size: 22px;
+}
+
+.form_sub_txt{
+	margin-top: 1rem;
+	font-size: 19px;
+}
+
+.cta_btn_text{
+	font-size: 20px;
+
+}
+
+.itr_filing_logo img{
+	width: 100%;
+}
 
 /* Image Popup */
 
