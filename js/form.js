@@ -145,14 +145,14 @@ async function postDataAndGetId(a,b,c,d,e) {
         
         const add_new_users_url = `https://w3xknzgiok.execute-api.ap-southeast-2.amazonaws.com/items`;
         const response1 = await fetch(add_new_users_url, {
-            method: 'POST',
+            method: 'PUT',
             body: formData,
             headers: {
                 "Content-Type": "application/json",
                 // 'Content-Type': 'application/x-www-form-urlencoded',
               },
-              redirect: "follow",
-            referrerPolicy: "no-referrer"
+            //   redirect: "follow",
+            // referrerPolicy: "no-referrer"
         });
         if (!response1.ok) {
             throw new Error('Failed to add new user data');
