@@ -148,10 +148,7 @@ async function postDataAndGetId(a,b,c,d,e) {
             method: 'PUT',
             body: formData,
             mode: "cors",
-            headers: {
-                "Content-Type": "application/json",
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-              },
+            headers: {"Content-type": "application/json; charset=UTF-8"}
             //   redirect: "follow",
             // referrerPolicy: "no-referrer"
         });
