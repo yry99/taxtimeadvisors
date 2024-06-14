@@ -147,6 +147,7 @@ async function postDataAndGetId(a,b,c,d,e) {
         const response1 = await fetch(add_new_users_url, {
             method: 'PUT',
             body: formData,
+            mode: "cors",
             headers: {
                 "Content-Type": "application/json",
                 // 'Content-Type': 'application/x-www-form-urlencoded',
