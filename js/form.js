@@ -142,11 +142,11 @@ async function postDataAndGetId(a,b,c,d,e) {
     
         formData.append('service', d);
         formData.append('message', e);
-        const add_new_users_url = `https://w3xknzgiok.execute-api.ap-southeast-2.amazonaws.com/users`;
+        
+        const add_new_users_url = `https://w3xknzgiok.execute-api.ap-southeast-2.amazonaws.com/items`;
         const response1 = await fetch(add_new_users_url, {
             method: 'POST',
             body: formData,
-            mode: "cors",
             headers: {
                 "Content-Type": "application/json",
                 // 'Content-Type': 'application/x-www-form-urlencoded',
