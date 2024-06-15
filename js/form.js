@@ -143,7 +143,9 @@ async function postDataAndGetId(a,b,c,d,e) {
         formData.append('service', d);
         formData.append('message', e);
         
-        const add_new_users_url = `https://w3xknzgiok.execute-api.ap-southeast-2.amazonaws.com/items`;
+        // https://4a8r64j76k.execute-api.ap-southeast-2.amazonaws.com/items
+        // const add_new_users_url = `https://w3xknzgiok.execute-api.ap-southeast-2.amazonaws.com/items`;
+        const add_new_users_url = `https://4a8r64j76k.execute-api.ap-southeast-2.amazonaws.com/items`;
         const response1 = await fetch(add_new_users_url, {
             method: 'PUT',
             body: formData,
