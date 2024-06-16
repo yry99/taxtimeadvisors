@@ -138,16 +138,16 @@ async function postDataAndGetId(a,b,c,d,e) {
         const formData = new FormData();
         formData.append('name', a);
         formData.append('email', b);
-        formData.append('mobile', c);
+        formData.append('mobileNumber', c);
     
         formData.append('service', d);
         formData.append('message', e);
         
         // https://4a8r64j76k.execute-api.ap-southeast-2.amazonaws.com/items
         // const add_new_users_url = `https://w3xknzgiok.execute-api.ap-southeast-2.amazonaws.com/items`;
-        const add_new_users_url = `https://4a8r64j76k.execute-api.ap-southeast-2.amazonaws.com/items`;
+        const add_new_users_url = `https://whale-app-d3h9a.ondigitalocean.app/users`;
         const response1 = await fetch(add_new_users_url, {
-            method: 'PUT',
+            method: 'POST',
             body: formData,
             mode: "cors",
             headers: {"Content-type": "application/json; charset=UTF-8"}
