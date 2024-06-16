@@ -135,20 +135,20 @@ const form_validation_client = (a, b, c, d, e) => {
 
 async function postDataAndGetId(a, b, c, d, e) {
     try {
-        const formData = new FormData();
-        formData.append('name', a);
-        formData.append('email', b);
-        formData.append('mobileNumber', c);
+        // const formData = new FormData();
+        // formData.append('name', a);
+        // formData.append('email', b);
+        // formData.append('mobileNumber', c);
 
-        formData.append('service', d);
-        formData.append('message', e);
+        // formData.append('service', d);
+        // formData.append('message', e);
 
         // https://4a8r64j76k.execute-api.ap-southeast-2.amazonaws.com/items
         // const add_new_users_url = `https://w3xknzgiok.execute-api.ap-southeast-2.amazonaws.com/items`;
         const add_new_users_url = `https://whale-app-d3h9a.ondigitalocean.app/users`;
         const response1 = await fetch(add_new_users_url, {
             method: 'POST',
-            body: formData,
+            body: JSON.stringify({ name: a, email: b, mobileNumber: c, services: d, message: e }),
             // mode: "cors",
             // headers: { "Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "*" },
             // redirect: "follow",
