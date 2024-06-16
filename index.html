@@ -23,6 +23,9 @@
       pointer-events: none;
       cursor: not-allowed;
     }
+    .no-display{
+      display: none;
+    }
     .form {
       width: 100%;
       background-color: #fff;
@@ -1133,7 +1136,7 @@
               <span class="circle one"></span>
               <span class="circle two"></span>
 
-              <form action="index.html" autocomplete="on" method="POST" id="form">
+              <form action="index.html" autocomplete="off" method="POST" id="form">
                 <!-- <h3 class="title">Contact us</h3> -->
                 <div class="input-container">
                   <input type="text" name="name" class="input" id="form_name" required />
@@ -1190,9 +1193,9 @@
                 <input type="submit" value="Send" class="btn" id="sub_btn" />
               </form>
             </div>
-            <!-- <div class="thank_you_message">
-                <h2>Thank you for your request</h2>
-              </div> -->
+            <div class="thank_you_message no-display">
+                <h2>Thank you for your request. We will contact you soon!</h2>
+              </div>
           </div>
         </div>
       </div>

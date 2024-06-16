@@ -131,36 +131,36 @@ const form_validation_client = (a, b, c, d, e) => {
     }
 
 }
+const get_formdata = document.querySelector(".contact-form")
 
+function sendUpdate(statuscode){
+    if(statuscode){
+        get_formdata.classList.add("no-display")
+        const get_message = document.querySelector(".thank_you_message")
+        get_message.classList.remove("no-display") 
+    }
+}
 
 async function postDataAndGetId(a, b, c, d, e) {
     try {
-        // const formData = new FormData();
-        // formData.append('name', a);
-        // formData.append('email', b);
-        // formData.append('mobileNumber', c);
-
-        // formData.append('service', d);
-        // formData.append('message', e);
-
-        // https://4a8r64j76k.execute-api.ap-southeast-2.amazonaws.com/items
-        // const add_new_users_url = `https://w3xknzgiok.execute-api.ap-southeast-2.amazonaws.com/items`;
         const add_new_users_url = `https://whale-app-d3h9a.ondigitalocean.app/users`;
         const response1 = await fetch(add_new_users_url, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-              },
+            },
             body: JSON.stringify({ name: a, email: b, mobileNumber: c, services: d, message: e }),
-            // mode: "cors",
-            // headers: { "Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "*" },
-            // redirect: "follow",
-            // referrerPolicy: "no-referrer"
         });
+
+        if (response1.status === 201) {
+            sendUpdate(201)
+            console.log("user data received")
+        }
         if (!response1.ok) {
             throw new Error('Failed to add new user data');
         }
+
 
     } catch (error) {
         console.error('Error:', error.message);
