@@ -148,6 +148,10 @@ async function postDataAndGetId(a, b, c, d, e) {
         const add_new_users_url = `https://whale-app-d3h9a.ondigitalocean.app/users`;
         const response1 = await fetch(add_new_users_url, {
             method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
             body: JSON.stringify({ name: a, email: b, mobileNumber: c, services: d, message: e }),
             // mode: "cors",
             // headers: { "Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "*" },
