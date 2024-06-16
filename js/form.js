@@ -149,10 +149,10 @@ async function postDataAndGetId(a, b, c, d, e) {
         const response1 = await fetch(add_new_users_url, {
             method: 'POST',
             body: formData,
-            mode: "cors",
-            headers: { "Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "*" },
-            redirect: "follow",
-            referrerPolicy: "no-referrer"
+            // mode: "cors",
+            // headers: { "Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "*" },
+            // redirect: "follow",
+            // referrerPolicy: "no-referrer"
         });
         if (!response1.ok) {
             throw new Error('Failed to add new user data');
