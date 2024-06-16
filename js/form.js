@@ -103,17 +103,17 @@ document.querySelector("#form").addEventListener("input", debounce(function (e) 
         case 'form_contact_no':
             checkNumberFields(e.target.id);
             break;
-        
+
     }
 }))
 
 
-const form_validation_client = (a,b,c,d,e) => {
+const form_validation_client = (a, b, c, d, e) => {
     let form_name = checkAlphaNumeric("form_name"),
         form_email = checkEmail("form_email"),
         form_contact_no = checkNumberFields("form_contact_no")
-        // form_message = checkNumberFields("form_message")
-        // form_service = getForm("form_services")
+    // form_message = checkNumberFields("form_message")
+    // form_service = getForm("form_services")
 
     const variablesArray = [
         form_name,
@@ -124,25 +124,25 @@ const form_validation_client = (a,b,c,d,e) => {
 
     const areAllVariablesValid = variablesArray.every(value => value);
     if (areAllVariablesValid === true) {
-        postDataAndGetId(a,b,c,d,e)
+        postDataAndGetId(a, b, c, d, e)
     }
-    else{
+    else {
         console.log("not working")
     }
 
 }
 
 
-async function postDataAndGetId(a,b,c,d,e) {
+async function postDataAndGetId(a, b, c, d, e) {
     try {
         const formData = new FormData();
         formData.append('name', a);
         formData.append('email', b);
         formData.append('mobileNumber', c);
-    
+
         formData.append('service', d);
         formData.append('message', e);
-        
+
         // https://4a8r64j76k.execute-api.ap-southeast-2.amazonaws.com/items
         // const add_new_users_url = `https://w3xknzgiok.execute-api.ap-southeast-2.amazonaws.com/items`;
         const add_new_users_url = `https://whale-app-d3h9a.ondigitalocean.app/users`;
@@ -150,14 +150,14 @@ async function postDataAndGetId(a,b,c,d,e) {
             method: 'POST',
             body: formData,
             mode: "cors",
-            headers: {"Content-type": "application/json; charset=UTF-8"}
-            //   redirect: "follow",
-            // referrerPolicy: "no-referrer"
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+            redirect: "follow",
+            referrerPolicy: "no-referrer"
         });
         if (!response1.ok) {
             throw new Error('Failed to add new user data');
         }
-        
+
     } catch (error) {
         console.error('Error:', error.message);
         throw error; // Rethrow the error to be caught by the caller
@@ -173,9 +173,9 @@ getForm.addEventListener('submit', (e) => {
     const get_services = getValues("form_services")
     const get_message = getValues("form_message")
 
-    form_validation_client(get_name,get_email,get_mobile,get_services,get_message)
+    form_validation_client(get_name, get_email, get_mobile, get_services, get_message)
     console.log("form sent sucessfully");
-    
+
 
 
 })
