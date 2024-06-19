@@ -46,6 +46,13 @@ h5 {
 	font-size: 20px;
 }
 
+.privacy_policy > ul >li{
+	font-size: 15.7px;
+	color: #75849a;
+	line-height: 1.6;
+}
+
+
 p {
 	font-size: 15.7px;
 	color: #75849a;
