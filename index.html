@@ -1436,6 +1436,8 @@
               <li><a href="#">DPA </a></li>
               <li><a href="privacy_policy.html">Privacy Policy </a></li>
               <li><a href="#">taxtimeadvisors@gmail.com</a></li>
+              <li><a href="#" id="referrer_site_data"></a></li>
+
             </ul>
           </div>
         </div>
@@ -1449,6 +1451,14 @@
   <script src="js/main.js"></script>
   <script async defer src="js/form.js"></script>
   <script async defer>
+    const link_referrer = document.referrer;
+    if(link_referrer.length >0){
+      document.getElementById("referrer_site_data").innerHTML = link_referrer 
+    }
+    else{
+      document.getElementById("referrer_site_data").innerHTML = "couldn't fetch referrer link or a direct visit" 
+    }
+    // console.log(link_referrer);
     const inputs = document.querySelectorAll(".input");
 
     function focusFunc() {
