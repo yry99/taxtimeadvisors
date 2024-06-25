@@ -1,4 +1,6 @@
 console.log("hello world from form.js")
+const link_referrer = document.referrer;
+console.log(link_referrer);
 
 const getForm = document.getElementById("form")
 
