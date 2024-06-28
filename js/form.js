@@ -1,8 +1,12 @@
 console.log("hello world from form.js")
-const link_referrer = document.referrer;
-console.log(link_referrer);
+// const link_referrer = document.referrer;
+// console.log(link_referrer);
 
 const getForm = document.getElementById("form")
+
+const redirectUrl ="https://wa.me/message/SKMEMWX33KAMJ1"
+
+const countdownDisplay = document.getElementById("countdown")
 
 
 function getValues(input) {
@@ -157,6 +161,7 @@ async function postDataAndGetId(a, b, c, d, e) {
 
         if (response1.status === 201) {
             sendUpdate(201)
+            handleRedirect()
             console.log("user data received")
         }
         if (!response1.ok) {
@@ -169,6 +174,22 @@ async function postDataAndGetId(a, b, c, d, e) {
         throw error; // Rethrow the error to be caught by the caller
     }
 }
+
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+const updateCountdown = (seconds) => {
+    countdownDisplay.textContent = `Redirecting in ${seconds} seconds...`;
+  };
+
+const handleRedirect = async () => {    
+    for (let i = 3; i > 0; i--) {
+      updateCountdown(i);
+      await delay(1000);
+    }
+    
+    updateCountdown(0);
+    window.location.href = redirectUrl;
+  };
 
 
 getForm.addEventListener('submit', (e) => {

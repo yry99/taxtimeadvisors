@@ -1218,6 +1218,7 @@
             </div>
             <div class="thank_you_message no-display">
               <h2>Thank you for your request. We will contact you soon!</h2>
+              <h3 id="countdown"></h3>
             </div>
           </div>
         </div>
@@ -1451,14 +1452,6 @@
   <script src="js/main.js"></script>
   <script async defer src="js/form.js"></script>
   <script async defer>
-    const link_referrer = document.referrer;
-    if(link_referrer.length >0){
-      document.getElementById("referrer_site_data").innerHTML = link_referrer 
-    }
-    else{
-      document.getElementById("referrer_site_data").innerHTML = "couldn't fetch referrer link or a direct visit" 
-    }
-    // console.log(link_referrer);
     const inputs = document.querySelectorAll(".input");
 
     function focusFunc() {
